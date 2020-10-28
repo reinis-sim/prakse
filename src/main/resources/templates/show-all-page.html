@@ -1,0 +1,48 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<body>
+	
+
+		<div>
+		
+			<table class="table">
+			
+			
+				<thead>
+				
+					<tr>
+					
+						<th scope="col">Frequency</th>
+						<th scope="col">Band Name</th>
+						<th scope="col">Band Width</th>
+						<th scope="col">Number Of Channels</th>
+					
+					</tr>
+				
+				</thead>
+				
+				<tbody>
+					<tr th:each= "freq: ${innerObject}">
+						<td th:text="${freq.getStartingFrequency()}"></td>
+						<td th:text="${freq.getBandName()}"></td>
+						<td th:text="${freq.getBandWidth()}"></td>
+						<td th:text="${freq.getNumOfChannels()}"></td>
+						
+					
+					
+					
+					</tr>
+				
+				
+				
+				
+				
+				</tbody>
+			
+			
+			</table>
+			
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<body>
+	
+
+		<div>
+		
+			<form action="#" th:action="@{/insert}"
+		th:object="${frequencyBlock}" method="post">
+		
+		
+			<table>
+			
+			
+			
+				
+				<tr>
+				
+					<td>Insert starting frequency</td>
+					<td> <input type = "text" th:field="*{startingFrequency}"></td>
+					<td th:if="${#fields.hasErrors('startingFrequency')}" th:errors="*{startingFrequency}"></td>
+				
+				</tr>
+				
+				<tr>
+				
+					<td>Insert Band Name</td>
+					<td> <input type = "text" th:field="*{bandName}"></td>
+					<td th:if="${#fields.hasErrors('bandName')}" th:errors="*{bandName}"></td>
+				
+				</tr>
+				
+				<tr>
+				
+					<td>Insert Band Width</td>
+					<td> <input type = "text" th:field="*{bandWidth}"></td>
+					<td th:if="${#fields.hasErrors('bandWidth')}" th:errors="*{bandWidth}"></td>
+				
+				</tr>
+				
+				<tr>
+				
+					<td>Insert Number of channels</td>
+					<td> <input type = "text" th:field="*{numOfChannels}"></td>
+					<td th:if="${#fields.hasErrors('numOfChannels')}" th:errors="*{numOfChannels}"></td>
+				
+				</tr>
+			
+			
+			
+			
+			</table>
+			
+			<input type="submit">
+		
+	
+		
+		</form>
+			
+		</div>
+
+
+	</body>
+</html>
