@@ -84,9 +84,12 @@ public class FrequencyBlock {
 
 	@Override
 	public String toString() {
-		return "FrequencyBlock [ID_Freq=" + ID_Freq + ", StartingFrequency=" + StartingFrequency + ", BandName="
+		return "(FrequencyBlock [ID_Freq=" + ID_Freq + ", StartingFrequency=" + StartingFrequency + ", BandName="
 				+ BandName + ", BandWidth=" + BandWidth + ", NumOfChannels=" + NumOfChannels + "]";
 	}
+	
+	
+
 
 	
 
