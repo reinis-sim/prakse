@@ -50,7 +50,7 @@ public class FrequencyBlockController {
 			return "insert-page";
 		}
 		
-		freqService.insertNewFrequencyBlockByObject(frequencyBlock);
+		freqService.insertNewFrequencyBlock(frequencyBlock.getStartingFrequency(), frequencyBlock.getBandName(), frequencyBlock.getBandWidth(), frequencyBlock.getNumOfChannels());
 		return "redirect:/showAll";
 	}
 	

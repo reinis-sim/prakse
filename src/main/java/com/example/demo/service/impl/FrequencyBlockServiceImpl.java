@@ -39,8 +39,19 @@ public class FrequencyBlockServiceImpl implements IFrequencyBlockService {
 	@Override
 	public boolean insertNewFrequencyBlock(float startingFrequency, String bandName, float bandWidth,
 			int numOfChannels) {
-		FrequencyBlock frequencyBlock = new FrequencyBlock(startingFrequency,bandName,bandWidth,numOfChannels);
-		freqRepo.save(frequencyBlock);
+		
+		for (int i = 0; i < numOfChannels; i++) {
+			
+			if(i>=3) {
+			if(i % 4 == 0) {
+			startingFrequency = startingFrequency + (bandWidth*2);
+			}}
+			FrequencyBlock frequencyBlock = new FrequencyBlock(startingFrequency,bandName,bandWidth,numOfChannels);
+			freqRepo.save(frequencyBlock);
+		
+		}
+		//FrequencyBlock frequencyBlock = new FrequencyBlock(startingFrequency,bandName,bandWidth,numOfChannels);
+		//freqRepo.save(frequencyBlock);
 		return true;
 	}
 

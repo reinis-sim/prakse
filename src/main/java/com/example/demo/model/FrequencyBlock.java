@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Table(name = "FrequencyBlock")
 @Entity
@@ -17,16 +19,17 @@ public class FrequencyBlock {
 	@Column(name = "ID_Freq")
 	private int ID_Freq;
 
-	@Min(0)
+	@Min(value=1)
 	private float StartingFrequency;
 	
-	
+	@Size(min = 1, max = 15)
+	@Pattern(regexp = "[a-zA-Z\\s]+$")
 	private String BandName;
 	
-	@Min(1)
+	@Min(value=1)
 	private float BandWidth;
 	
-	@Min(1)
+	@Min(value=1)
 	private int NumOfChannels;
 //	private String StationName;
 
@@ -60,6 +63,13 @@ public class FrequencyBlock {
 
 	public void setNumOfChannels(int numOfChannels) {
 		NumOfChannels = numOfChannels;
+	}
+	
+	
+	
+
+	public int getID_Freq() {
+		return ID_Freq;
 	}
 
 	/*
